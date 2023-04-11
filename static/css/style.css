@@ -940,8 +940,8 @@ span.type-text,
 
 #search-text,
 ul.search-type li input:checked+label {
-    color: #333;
-    background-color: #f2f2f2;
+    color: #000;
+    background-color: #51A351;
 }
 
 .mainBg {
