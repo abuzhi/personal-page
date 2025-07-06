@@ -1,1875 +1,1346 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>个人导航</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="keywords" content="个人导航,简单网址导航"/>
-    <meta name="description" content="机会总是垂青于有准备的人"/>
-    <link rel="manifest" href="manifest.json"/>
-    <link rel="apple-touch-icon" href="static/img/apple-touch-icon.png"/>
-    <meta name="color-scheme" content="light dark"/>
-    <meta name="theme-color" content="#f2f2f2"/>
-    <link rel="dns-prefetch" href="//cdn.statically.io"/>
-    <link rel="dns-prefetch" href="//cdn.jsdelivr.net"/>
-    <link rel="dns-prefetch" href="//cdn.staticfile.org"/>
-    <link rel="dns-prefetch" href="//www.googletagmanager.com"/>
-    <link rel="preconnect" href="https://fonts.geekzu.org"/>
-    <link rel="shortcut icon" href="static/img/favicon.ico"/>
-    <link href="https://cdn.staticfile.org/normalize/8.0.1/normalize.min.css" rel="stylesheet"/>
-    <link href="static/css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="static/css/toastr.min.css" rel="stylesheet" type="text/css"/>
-</head>
-<body class="wrapper">
-<header id="header">
-    <div class="header">
-        <div class="title">个人导航</div>
-        <div class="greeting" style="color: #fff">
-                    <span id="greetings" class="greetings">Hello ...
-                    </span><span id="date"
-                                 class="date">北京时间</span><span
-                id="clock" class="clock"></span></div>
-        <div class="about">
-            <span class="iconify" data-icon="file-icons:hugo" style="color: #fff"></span>
-            <a href="https://abuzhi.github.io/" target="_blank" rel="noopener noreferrer" style="color: #fff">博客</a>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="个人导航,简单网址导航" />
+    <meta name="description" content="机会总是垂青于有准备的人" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="static/img/apple-touch-icon.png" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#667eea" />
+    <link rel="dns-prefetch" href="//cdn.statically.io" />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="//cdn.staticfile.org" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="preconnect" href="https://fonts.geekzu.org" />
+    <link rel="shortcut icon" href="static/img/favicon.ico" />
+    <link
+      href="https://cdn.staticfile.org/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="static/css/enhanced.css" rel="stylesheet" type="text/css" />
+    <link href="static/css/toastr.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/weather-icons@1.3.2/css/weather-icons.min.css"
+    />
+  </head>
+  <body class="wrapper">
+    <div class="page-container">
+      <header id="header">
+        <div class="header">
+          <div class="title">
+            <h1>个人导航</h1>
+            <p class="subtitle">发现更美好的网络世界</p>
+          </div>
+          <div class="greeting" style="color: #fff">
+            <span id="greetings" class="greetings">Hello ... </span>
+            <span id="date" class="date">北京时间</span>
+            <span id="clock" class="clock"></span>
+          </div>
+          <div class="about">
+            <span
+              class="iconify"
+              data-icon="file-icons:hugo"
+              style="color: #fff"
+            ></span>
+            <a
+              href="https://abuzhi.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="color: #fff"
+              >博客</a
+            >
+          </div>
         </div>
-    </div>
-</header>
-<nav id="menu">
-    <ul class="items">
-        <li class="item">
-            <a class="scrollTo" href="#header">首 页<span class="iconify" data-icon="bx:home-circle"></span></a>
-        </li>
-        <li class="item">
-            <a class="scrollTo" href="#sns">社 交<span class="iconify" data-icon="foundation:social-twitter"></span></a>
-        </li>
-        <li class="item">
-            <a class="scrollTo" href="#header"
-            >返回顶部<span class="iconify" data-icon="emojione:top-arrow"></span
-            ></a>
-        </li>
-    </ul>
-</nav>
-<main id="content" class="content">
-    <section id="home_search">
-        <div class="item-box border">
-            <div id="search">
-                <div id="search-list" class="hide-type-list">
-                    <div class="s-type">
-                        <span class="type-text"></span>
-                        <div class="s-type-list transition">
-                            <label for="type-google"
-                            ><span class="emoji">🔍</span>常用</label
-                            ><label for="type-spotify"
-                        ><span class="emoji">🎵</span>音乐</label
-                        ><label for="type-youtube"
-                        ><span class="emoji">🎬</span>视频</label
-                        ><label for="type-coupon"
-                        ><span class="emoji">🛒</span>购物</label
-                        ><label for="type-google-images"
-                        ><span class="emoji">🎴</span>图片</label
-                        ><label for="type-csswinner"
-                        ><span class="emoji">📱</span>设计</label
-                        >
-                        </div>
-                    </div>
-                    <div class="search-group s-current">
-                        <span class="type-text metaColor">搜索</span>
-                        <ul class="search-type">
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-google"
-                                        value="https://www.google.com/search?q="
-                                        data-placeholder="输入关键词后按回车即可搜索"
-                                        hidden=""
-                                /><label
-                                    id="focused"
-                                    for="type-google"
-                                    class="metaColor transition"
-                            >Google</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-baidu"
-                                        value="https://www.baidu.com/s?wd="
-                                        data-placeholder="百度一下，你就知道！"
-                                        hidden=""
-                                /><label for="type-baidu" class="metaColor transition"
-                            >百度</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-github"
-                                        value="https://github.com/search?q="
-                                        data-placeholder="Where the world builds software"
-                                        hidden=""
-                                /><label for="type-github" class="metaColor transition"
-                            >GitHub</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-bing"
-                                        value="https://www.bing.com/search?q"
-                                        data-placeholder="Microsoft Bing Search"
-                                        hidden=""
-                                /><label for="type-bing" class="metaColor transition"
-                            >Bing</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-whois"
-                                        value="https://www.whois.com/whois/"
-                                        data-placeholder="Free Whois Domain and IP Lookup"
-                                        hidden=""
-                                /><label for="type-whois" class="metaColor transition"
-                            >Whois</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-unsplash-hot"
-                                        value="https://unsplash.com/search/"
-                                        data-placeholder="优美免费无版权高清图片搜索"
-                                        hidden=""
-                                /><label
-                                    for="type-unsplash-hot"
-                                    class="metaColor transition"
-                            >Unsplash</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-ping"
-                                        value="https://ping.chinaz.com/"
-                                        data-placeholder="多个地点 PING 服务器，网站测速"
-                                        hidden=""
-                                /><label for="type-ping" class="metaColor transition"
-                            >PING</label
-                            >
-                            </li>
+      </header>
 
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-douban"
-                                        value="https://www.douban.com/search?q="
-                                        data-placeholder="汇集一亿人生活趣味"
-                                        hidden=""
-                                /><label for="type-douban" class="metaColor transition"
-                            >豆瓣</label
-                            >
-                            </li>
-                        </ul>
+      <div class="main-content">
+        <main id="content" class="content">
+          <section id="home_search">
+            <div class="item-box border search-container">
+              <div id="search">
+                <div id="search-list" class="hide-type-list">
+                  <div class="s-type">
+                    <span class="type-text"></span>
+                    <div class="s-type-list transition">
+                      <label for="type-google"
+                        ><span class="emoji">🔍</span>常用</label
+                      ><label for="type-spotify"
+                        ><span class="emoji">🎵</span>音乐</label
+                      ><label for="type-youtube"
+                        ><span class="emoji">🎬</span>视频</label
+                      ><label for="type-coupon"
+                        ><span class="emoji">🛒</span>购物</label
+                      ><label for="type-google-images"
+                        ><span class="emoji">🎴</span>图片</label
+                      ><label for="type-csswinner"
+                        ><span class="emoji">📱</span>设计</label
+                      >
                     </div>
-                    <div class="search-group">
-                        <span class="type-text metaColor">图片</span>
-                        <ul class="search-type">
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-google-images"
-                                        value="https://www.google.com/search?newwindow=1&amp;safe=strict&amp;biw=1542&amp;bih=956&amp;tbm=isch&amp;sa=1&amp;q="
-                                        data-placeholder="Google图片搜索"
-                                        hidden=""
-                                /><label
-                                    for="type-google-images"
-                                    class="metaColor transition"
-                            >Google</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-unsplash"
-                                        value="https://unsplash.com/search/"
-                                        data-placeholder="优美免费无版权高清图片搜索"
-                                        hidden=""
-                                /><label for="type-unsplash" class="metaColor transition"
-                            >Unsplash</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-pexels"
-                                        value="https://www.pexels.com/search/"
-                                        data-placeholder="Pexels免费图库搜索"
-                                        hidden=""
-                                /><label for="type-pexels" class="metaColor transition"
-                            >Pexels</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-bing-images"
-                                        value="https://www.bing.com/images/search?q="
-                                        data-placeholder="Bing图片搜索"
-                                        hidden=""
-                                /><label for="type-bing-images" class="metaColor transition"
-                            >Bing</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-500px"
-                                        value="https://500px.com/search?q="
-                                        data-placeholder="500PX 高品质摄影图片搜索"
-                                        hidden=""
-                                /><label for="type-500px" class="metaColor transition"
-                            >500PX</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-baidu-images"
-                                        value="https://image.baidu.com/search/index?tn=baiduimage&amp;ps=1&amp;ct=201326592&amp;lm=-1&amp;cl=2&amp;nc=1&amp;ie=utf-8&amp;word="
-                                        data-placeholder="百度图片搜索"
-                                        hidden=""
-                                /><label
-                                    for="type-baidu-images"
-                                    class="metaColor transition"
-                            >百度</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-hellorf"
-                                        value="https://www.hellorf.com/photo/search/all/"
-                                        data-placeholder="海洛正版图库"
-                                        hidden=""
-                                /><label for="type-hellorf" class="metaColor transition"
-                            >海洛</label
-                            >
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="search-group">
-                        <span class="type-text metaColor">设计</span>
-                        <ul class="search-type">
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-csswinner"
-                                        value="https://www.csswinner.com/search/"
-                                        data-placeholder="最佳的CSS网页设计灵感画廊"
-                                        hidden=""
-                                /><label for="type-csswinner" class="metaColor transition"
-                            >CSS Winner</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-zcool"
-                                        value="https://www.zcool.com.cn/tosearch.do?page=0&amp;f=hb&amp;world="
-                                        data-placeholder="站酷素材搜索"
-                                        hidden=""
-                                /><label for="type-zcool" class="metaColor transition"
-                            >站酷</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-uicn"
-                                        value="https://s.ui.cn/index.html?keywords="
-                                        data-placeholder="UI 中国素材搜索"
-                                        hidden=""
-                                /><label for="type-uicn" class="metaColor transition"
-                            >UI 中国</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-shejidaren"
-                                        value="https://so.shejidaren.com/cse/search?s=1461928278188833482&amp;q="
-                                        data-placeholder="设计达人素材搜索"
-                                        hidden=""
-                                /><label for="type-shejidaren" class="metaColor transition"
-                            >设计达人</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-68design"
-                                        value="https://www.68design.net/work/?k="
-                                        data-placeholder="68Design素材搜索"
-                                        hidden=""
-                                /><label for="type-68design" class="metaColor transition"
-                            >68Design</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-uisdc"
-                                        value="https://so.uisdc.com/cse/search?s=16162430669563244173&amp;q="
-                                        data-placeholder="优设素材搜索"
-                                        hidden=""
-                                /><label for="type-uisdc" class="metaColor transition"
-                            >优设</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-abduzeedo"
-                                        value="https://abduzeedo.com/search/node?keys="
-                                        data-placeholder="一个关于创意灵感的站点"
-                                        hidden=""
-                                /><label for="type-abduzeedo" class="metaColor transition"
-                            >Abduzeedo</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-niice"
-                                        value="https://niice.co/search/"
-                                        data-placeholder="设计师视觉搜索引擎"
-                                        hidden=""
-                                /><label for="type-niice" class="metaColor transition"
-                            >Niice</label
-                            >
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="search-group">
-                        <span class="type-text metaColor">音乐</span>
-                        <ul class="search-type">
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-spotify"
-                                        value="https://open.spotify.com/search/"
-                                        data-placeholder="Search from Spotify"
-                                        hidden=""
-                                /><label for="type-spotify" class="metaColor transition"
-                            >Spotify</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-163"
-                                        value="https://music.163.com/#/search/m/?s="
-                                        data-placeholder="网易云音乐搜索"
-                                        hidden=""
-                                /><label for="type-163" class="metaColor transition"
-                            >网易云音乐</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-lastfm"
-                                        value="https://www.last.fm/search?q="
-                                        data-placeholder="Search from Last.fm"
-                                        hidden=""
-                                /><label for="type-lastfm" class="metaColor transition"
-                            >Last fm</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-qq-music"
-                                        value="https://y.qq.com/portal/search.html#searchid=1&amp;remoteplace=txt.yqq.top&amp;t=song&amp;w="
-                                        data-placeholder="QQ音乐"
-                                        hidden=""
-                                /><label for="type-qq-music" class="metaColor transition"
-                            >QQ 音乐</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-xiami"
-                                        value="https://www.xiami.com/search?key="
-                                        data-placeholder="虾米音乐"
-                                        hidden=""
-                                /><label for="type-xiami" class="metaColor transition"
-                            >虾米</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-baidu-music"
-                                        value="https://music.baidu.com/search?key="
-                                        data-placeholder="百度音乐"
-                                        hidden=""
-                                /><label for="type-baidu-music" class="metaColor transition"
-                            >百度音乐</label
-                            >
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="search-group">
-                        <span class="type-text metaColor">视频</span>
-                        <ul class="search-type">
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-youtube"
-                                        value="https://www.youtube.com/results?search_query="
-                                        data-placeholder="Youtube 视频搜索"
-                                        hidden=""
-                                /><label for="type-youtube" class="metaColor transition"
-                            >Youtube</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-bilibili"
-                                        value="https://search.bilibili.com/all?keyword="
-                                        data-placeholder="哔哩哔哩 视频搜索"
-                                        hidden=""
-                                /><label for="type-bilibili" class="metaColor transition"
-                            >哔哩哔哩</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-pianyuan"
-                                        value="https://pianyuan.org/search?q="
-                                        data-placeholder="搜索片源网电影"
-                                        hidden=""
-                                /><label for="type-pianyuan" class="metaColor transition"
-                            >片源网</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-piaohua"
-                                        value="https://www.piaohua.com/plus/search.php?kwtype=0&amp;keyword="
-                                        data-placeholder="飘花电影高清电影下载"
-                                        hidden=""
-                                /><label for="type-piaohua" class="metaColor transition"
-                            >飘花电影</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-gaoqing"
-                                        value="https://gaoqing.la/?s="
-                                        data-placeholder="中国高清网"
-                                        hidden=""
-                                /><label for="type-gaoqing" class="metaColor transition"
-                            >中国高清网</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-youku"
-                                        value="https://www.soku.com/search_video/q_"
-                                        data-placeholder="优酷视频搜索"
-                                        hidden=""
-                                /><label for="type-youku" class="metaColor transition"
-                            >优酷</label
-                            >
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="search-group">
-                        <span class="type-text metaColor">购物</span>
-                        <ul class="search-type">
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-coupon"
-                                        value="https://www.kubaicai.com/?r=/l&kw="
-                                        data-placeholder="搜索精选优惠券 淘宝 京东 拼多多"
-                                        hidden=""
-                                /><label for="type-coupon" class="metaColor transition"
-                            >优惠券</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-jd"
-                                        value="https://search.jd.com/Search?keyword="
-                                        data-placeholder="京东商品搜索"
-                                        hidden=""
-                                /><label for="type-jd" class="metaColor transition"
-                            >京东</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-taobao"
-                                        value="https://s.taobao.com/search?q="
-                                        data-placeholder="淘宝商品搜索"
-                                        hidden=""
-                                /><label for="type-taobao" class="metaColor transition"
-                            >淘宝</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-tmall"
-                                        value="https://list.tmall.com/search_product.htm?q="
-                                        data-placeholder="天猫商品搜索"
-                                        hidden=""
-                                /><label for="type-tmall" class="metaColor transition"
-                            >天猫</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-amazon"
-                                        value="https://www.amazon.cn/s/ref=nb_sb_noss_1?__mk_zh_CN=亚马逊网站&amp;url=search-alias%3Daps&amp;field-keywords="
-                                        data-placeholder="亚马逊商品搜索"
-                                        hidden=""
-                                /><label for="type-amazon" class="metaColor transition"
-                            >亚马逊</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-dangdang"
-                                        value="https://search.dangdang.com/?key="
-                                        data-placeholder="当当商品搜索"
-                                        hidden=""
-                                /><label for="type-dangdang" class="metaColor transition"
-                            >当当</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-meituan"
-                                        value="https://cd.meituan.com/s/?w="
-                                        data-placeholder="美团商品搜索"
-                                        hidden=""
-                                /><label for="type-meituan" class="metaColor transition"
-                            >美团</label
-                            >
-                            </li>
-                            <li>
-                                <input
-                                        checked=""
-                                        type="radio"
-                                        name="type"
-                                        id="type-ebay"
-                                        value="https://www.ebay.com/sch/"
-                                        data-placeholder="eBay商品搜索"
-                                        hidden=""
-                                /><label for="type-ebay" class="metaColor transition"
-                            >eBay</label
-                            >
-                            </li>
-                        </ul>
-                    </div>
+                  </div>
+                  <div class="search-group s-current">
+                    <span class="type-text metaColor">搜索</span>
+                    <ul class="search-type">
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-google"
+                          value="https://www.google.com/search?q="
+                          data-placeholder="输入关键词后按回车即可搜索"
+                          hidden=""
+                        /><label
+                          id="focused"
+                          for="type-google"
+                          class="metaColor transition"
+                          >Google</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-baidu"
+                          value="https://www.baidu.com/s?wd="
+                          data-placeholder="百度一下，你就知道！"
+                          hidden=""
+                        /><label for="type-baidu" class="metaColor transition"
+                          >百度</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-github"
+                          value="https://github.com/search?q="
+                          data-placeholder="Where the world builds software"
+                          hidden=""
+                        /><label for="type-github" class="metaColor transition"
+                          >GitHub</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-bing"
+                          value="https://www.bing.com/search?q"
+                          data-placeholder="Microsoft Bing Search"
+                          hidden=""
+                        /><label for="type-bing" class="metaColor transition"
+                          >Bing</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-whois"
+                          value="https://www.whois.com/whois/"
+                          data-placeholder="Free Whois Domain and IP Lookup"
+                          hidden=""
+                        /><label for="type-whois" class="metaColor transition"
+                          >Whois</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-unsplash-hot"
+                          value="https://unsplash.com/search/"
+                          data-placeholder="优美免费无版权高清图片搜索"
+                          hidden=""
+                        /><label
+                          for="type-unsplash-hot"
+                          class="metaColor transition"
+                          >Unsplash</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-ping"
+                          value="https://ping.chinaz.com/"
+                          data-placeholder="多个地点 PING 服务器，网站测速"
+                          hidden=""
+                        /><label for="type-ping" class="metaColor transition"
+                          >PING</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-douban"
+                          value="https://www.douban.com/search?q="
+                          data-placeholder="汇集一亿人生活趣味"
+                          hidden=""
+                        /><label for="type-douban" class="metaColor transition"
+                          >豆瓣</label
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="search-group">
+                    <span class="type-text metaColor">图片</span>
+                    <ul class="search-type">
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-google-images"
+                          value="https://www.google.com/search?newwindow=1&amp;safe=strict&amp;biw=1542&amp;bih=956&amp;tbm=isch&amp;sa=1&amp;q="
+                          data-placeholder="Google图片搜索"
+                          hidden=""
+                        /><label
+                          for="type-google-images"
+                          class="metaColor transition"
+                          >Google</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-unsplash"
+                          value="https://unsplash.com/search/"
+                          data-placeholder="优美免费无版权高清图片搜索"
+                          hidden=""
+                        /><label
+                          for="type-unsplash"
+                          class="metaColor transition"
+                          >Unsplash</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-pexels"
+                          value="https://www.pexels.com/search/"
+                          data-placeholder="Pexels免费图库搜索"
+                          hidden=""
+                        /><label for="type-pexels" class="metaColor transition"
+                          >Pexels</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-bing-images"
+                          value="https://www.bing.com/images/search?q="
+                          data-placeholder="Bing图片搜索"
+                          hidden=""
+                        /><label
+                          for="type-bing-images"
+                          class="metaColor transition"
+                          >Bing</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-500px"
+                          value="https://500px.com/search?q="
+                          data-placeholder="500PX 高品质摄影图片搜索"
+                          hidden=""
+                        /><label for="type-500px" class="metaColor transition"
+                          >500PX</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-baidu-images"
+                          value="https://image.baidu.com/search/index?tn=baiduimage&amp;ps=1&amp;ct=201326592&amp;lm=-1&amp;cl=2&amp;nc=1&amp;ie=utf-8&amp;word="
+                          data-placeholder="百度图片搜索"
+                          hidden=""
+                        /><label
+                          for="type-baidu-images"
+                          class="metaColor transition"
+                          >百度</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-hellorf"
+                          value="https://www.hellorf.com/photo/search/all/"
+                          data-placeholder="海洛正版图库"
+                          hidden=""
+                        /><label for="type-hellorf" class="metaColor transition"
+                          >海洛</label
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="search-group">
+                    <span class="type-text metaColor">设计</span>
+                    <ul class="search-type">
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-csswinner"
+                          value="https://www.csswinner.com/search/"
+                          data-placeholder="最佳的CSS网页设计灵感画廊"
+                          hidden=""
+                        /><label
+                          for="type-csswinner"
+                          class="metaColor transition"
+                          >CSS Winner</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-zcool"
+                          value="https://www.zcool.com.cn/tosearch.do?page=0&amp;f=hb&amp;world="
+                          data-placeholder="站酷素材搜索"
+                          hidden=""
+                        /><label for="type-zcool" class="metaColor transition"
+                          >站酷</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-uicn"
+                          value="https://s.ui.cn/index.html?keywords="
+                          data-placeholder="UI 中国素材搜索"
+                          hidden=""
+                        /><label for="type-uicn" class="metaColor transition"
+                          >UI 中国</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-shejidaren"
+                          value="https://so.shejidaren.com/cse/search?s=1461928278188833482&amp;q="
+                          data-placeholder="设计达人素材搜索"
+                          hidden=""
+                        /><label
+                          for="type-shejidaren"
+                          class="metaColor transition"
+                          >设计达人</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-68design"
+                          value="https://www.68design.net/work/?k="
+                          data-placeholder="68Design素材搜索"
+                          hidden=""
+                        /><label
+                          for="type-68design"
+                          class="metaColor transition"
+                          >68Design</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-uisdc"
+                          value="https://so.uisdc.com/cse/search?s=16162430669563244173&amp;q="
+                          data-placeholder="优设素材搜索"
+                          hidden=""
+                        /><label for="type-uisdc" class="metaColor transition"
+                          >优设</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-abduzeedo"
+                          value="https://abduzeedo.com/search/node?keys="
+                          data-placeholder="一个关于创意灵感的站点"
+                          hidden=""
+                        /><label
+                          for="type-abduzeedo"
+                          class="metaColor transition"
+                          >Abduzeedo</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-niice"
+                          value="https://niice.co/search/"
+                          data-placeholder="设计师视觉搜索引擎"
+                          hidden=""
+                        /><label for="type-niice" class="metaColor transition"
+                          >Niice</label
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="search-group">
+                    <span class="type-text metaColor">音乐</span>
+                    <ul class="search-type">
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-spotify"
+                          value="https://open.spotify.com/search/"
+                          data-placeholder="Search from Spotify"
+                          hidden=""
+                        /><label for="type-spotify" class="metaColor transition"
+                          >Spotify</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-163"
+                          value="https://music.163.com/#/search/m/?s="
+                          data-placeholder="网易云音乐搜索"
+                          hidden=""
+                        /><label for="type-163" class="metaColor transition"
+                          >网易云音乐</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-lastfm"
+                          value="https://www.last.fm/search?q="
+                          data-placeholder="Search from Last.fm"
+                          hidden=""
+                        /><label for="type-lastfm" class="metaColor transition"
+                          >Last fm</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-qq-music"
+                          value="https://y.qq.com/portal/search.html#searchid=1&amp;remoteplace=txt.yqq.top&amp;t=song&amp;w="
+                          data-placeholder="QQ音乐"
+                          hidden=""
+                        /><label
+                          for="type-qq-music"
+                          class="metaColor transition"
+                          >QQ 音乐</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-xiami"
+                          value="https://www.xiami.com/search?key="
+                          data-placeholder="虾米音乐"
+                          hidden=""
+                        /><label for="type-xiami" class="metaColor transition"
+                          >虾米</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-baidu-music"
+                          value="https://music.baidu.com/search?key="
+                          data-placeholder="百度音乐"
+                          hidden=""
+                        /><label
+                          for="type-baidu-music"
+                          class="metaColor transition"
+                          >百度音乐</label
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="search-group">
+                    <span class="type-text metaColor">视频</span>
+                    <ul class="search-type">
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-youtube"
+                          value="https://www.youtube.com/results?search_query="
+                          data-placeholder="Youtube 视频搜索"
+                          hidden=""
+                        /><label for="type-youtube" class="metaColor transition"
+                          >Youtube</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-bilibili"
+                          value="https://search.bilibili.com/all?keyword="
+                          data-placeholder="哔哩哔哩 视频搜索"
+                          hidden=""
+                        /><label
+                          for="type-bilibili"
+                          class="metaColor transition"
+                          >哔哩哔哩</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-pianyuan"
+                          value="https://pianyuan.org/search?q="
+                          data-placeholder="搜索片源网电影"
+                          hidden=""
+                        /><label
+                          for="type-pianyuan"
+                          class="metaColor transition"
+                          >片源网</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-piaohua"
+                          value="https://www.piaohua.com/plus/search.php?kwtype=0&amp;keyword="
+                          data-placeholder="飘花电影高清电影下载"
+                          hidden=""
+                        /><label for="type-piaohua" class="metaColor transition"
+                          >飘花电影</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-gaoqing"
+                          value="https://gaoqing.la/?s="
+                          data-placeholder="中国高清网"
+                          hidden=""
+                        /><label for="type-gaoqing" class="metaColor transition"
+                          >中国高清网</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-youku"
+                          value="https://www.soku.com/search_video/q_"
+                          data-placeholder="优酷视频搜索"
+                          hidden=""
+                        /><label for="type-youku" class="metaColor transition"
+                          >优酷</label
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="search-group">
+                    <span class="type-text metaColor">购物</span>
+                    <ul class="search-type">
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-coupon"
+                          value="https://www.kubaicai.com/?r=/l&kw="
+                          data-placeholder="搜索精选优惠券 淘宝 京东 拼多多"
+                          hidden=""
+                        /><label for="type-coupon" class="metaColor transition"
+                          >优惠券</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-jd"
+                          value="https://search.jd.com/Search?keyword="
+                          data-placeholder="京东商品搜索"
+                          hidden=""
+                        /><label for="type-jd" class="metaColor transition"
+                          >京东</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-taobao"
+                          value="https://s.taobao.com/search?q="
+                          data-placeholder="淘宝商品搜索"
+                          hidden=""
+                        /><label for="type-taobao" class="metaColor transition"
+                          >淘宝</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-tmall"
+                          value="https://list.tmall.com/search_product.htm?q="
+                          data-placeholder="天猫商品搜索"
+                          hidden=""
+                        /><label for="type-tmall" class="metaColor transition"
+                          >天猫</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-amazon"
+                          value="https://www.amazon.cn/s/ref=nb_sb_noss_1?__mk_zh_CN=亚马逊网站&amp;url=search-alias%3Daps&amp;field-keywords="
+                          data-placeholder="亚马逊商品搜索"
+                          hidden=""
+                        /><label for="type-amazon" class="metaColor transition"
+                          >亚马逊</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-dangdang"
+                          value="https://search.dangdang.com/?key="
+                          data-placeholder="当当商品搜索"
+                          hidden=""
+                        /><label
+                          for="type-dangdang"
+                          class="metaColor transition"
+                          >当当</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-meituan"
+                          value="https://cd.meituan.com/s/?w="
+                          data-placeholder="美团商品搜索"
+                          hidden=""
+                        /><label for="type-meituan" class="metaColor transition"
+                          >美团</label
+                        >
+                      </li>
+                      <li>
+                        <input
+                          checked=""
+                          type="radio"
+                          name="type"
+                          id="type-ebay"
+                          value="https://www.ebay.com/sch/"
+                          data-placeholder="eBay商品搜索"
+                          hidden=""
+                        /><label for="type-ebay" class="metaColor transition"
+                          >eBay</label
+                        >
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <form
-                        action="https://www.google.com/search?q="
-                        method="get"
-                        target="_blank"
-                        id="super-search-fm"
+                  action="https://www.google.com/search?q="
+                  method="get"
+                  target="_blank"
+                  id="super-search-fm"
                 >
-                    <input
-                            type="text"
-                            id="search-text"
-                            autocomplete="off"
-                            placeholder="输入关键词后按回车即可搜索"
-                            value=""
-                    />
-                    <button type="submit" id="search_submit" aria-label="Search">
-                        <span class="iconify" data-icon="akar-icons:search"></span>
-                    </button>
+                  <input
+                    type="text"
+                    id="search-text"
+                    autocomplete="off"
+                    placeholder="输入关键词后按回车即可搜索"
+                    value=""
+                  />
+                  <button type="submit" id="search_submit" aria-label="Search">
+                    <span class="iconify" data-icon="akar-icons:search"></span>
+                  </button>
                 </form>
                 <div
-                        class="set-check transition switchBG tip"
-                        title="新窗口将打开搜索结果"
+                  class="set-check transition switchBG tip"
+                  title="新窗口将打开搜索结果"
                 >
-                    <input
-                            type="checkbox"
-                            id="set-search-blank"
-                            checked="checked"
-                            required="required"
-                            hidden="hidden"
-                    /><label for="set-search-blank"></label>
+                  <input
+                    type="checkbox"
+                    id="set-search-blank"
+                    checked="checked"
+                    required="required"
+                    hidden="hidden"
+                  /><label for="set-search-blank"></label>
                 </div>
+              </div>
             </div>
-        </div>
-    </section>
-    <section id="home" class="inner-center main">
-        <div class="content-inside">
-            <div class="jj-list hot">
-                <div class="jj-list-tit">
-                    &bullet; 常用网站 <span></span>
-                </div>
+          </section>
+
+          <section id="home" class="inner-center main">
+            <div class="content-inside">
+              <div class="jj-list hot">
+                <div class="jj-list-tit">&bullet; 常用网站 <span></span></div>
                 <ul class="jj-list-con">
-                    <li>
-                        <a href="https://email.163.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://email.163.com/favicon.ico"
-                        />网易邮箱</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://github.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://github.githubassets.com/favicons/favicon.svg"
-                                src="https://github.githubassets.com/favicons/favicon.svg"
-                        />GitHub</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.v2ex.com/"
-                        ><img
-                                class="lazy white_bg"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.v2ex.com/static/favicon.ico"
-                        />v2ex</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.youtube.com/s/desktop/932eb6a8/img/favicon.ico"
-                        />Youtube</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.bilibili.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.bilibili.com/favicon.ico"
-                        />Bilibili</a
-                        >
-                    </li>
-                    <li>
-                        <a href="http://www.nmc.cn/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="http://image.nmc.cn/assets/favicon.ico"
-                        />气象台</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://store.steampowered.com"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://store.steampowered.com/favicon.ico"
-                        />Steam</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.xinhuanet.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://pc-index-static.cdn.bcebos.com/pc-index-nav/00001/导航List_新华网.png"
-                        />新华网</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.jd.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.jd.com/favicon.ico"
-                        />京东</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://map.baidu.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://map.baidu.com/favicon.ico"
-                        />百度地图</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.huangli.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.huangli.com/favicon.ico"
-                        />老黄历</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://earth.google.com/web/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.huangli1.com/favicon.ico"
-                        />Google Earth</a
-                        >
-                    </li>
+                  <li>
+                    <a href="https://email.163.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://email.163.com/favicon.ico"
+                      />网易邮箱</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://github.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://github.githubassets.com/favicons/favicon.svg"
+                        src="https://github.githubassets.com/favicons/favicon.svg"
+                      />GitHub</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.v2ex.com/" target="_blank"
+                      ><img
+                        class="lazy white_bg"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://www.v2ex.com/static/favicon.ico"
+                      />v2ex</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://www.youtube.com/s/desktop/932eb6a8/img/favicon.ico"
+                      />Youtube</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.bilibili.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://www.bilibili.com/favicon.ico"
+                      />Bilibili</a
+                    >
+                  </li>
+                  <li>
+                    <a href="http://www.nmc.cn/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="http://image.nmc.cn/assets/favicon.ico"
+                      />气象台</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://store.steampowered.com" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://store.steampowered.com/favicon.ico"
+                      />Steam</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.xinhuanet.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://pc-index-static.cdn.bcebos.com/pc-index-nav/00001/导航List_新华网.png"
+                      />新华网</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.jd.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://www.jd.com/favicon.ico"
+                      />京东</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://map.baidu.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://map.baidu.com/favicon.ico"
+                      />百度地图</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.huangli.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://www.huangli.com/favicon.ico"
+                      />老黄历</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://earth.google.com/web/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://www.huangli1.com/favicon.ico"
+                      />Google Earth</a
+                    >
+                  </li>
                 </ul>
-            </div>
-            <div id="it" class="jj-list">
-                <div class="jj-list-tit">
-                    &bullet; IT网站 <span></span>
-                </div>
+              </div>
+              <div id="it" class="jj-list">
+                <div class="jj-list-tit">&bullet; IT网站 <span></span></div>
                 <ul class="jj-list-con">
-                    <li>
-                        <a href="https://github.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://github.githubassets.com/favicons/favicon.svg"
-                                src="https://github.githubassets.com/favicons/favicon.svg"
-                        />GitHub</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://stackoverflow.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico"
-                        />StackOverFlow</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://hub.docker.com/search?q="
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://hub.docker.com/favicon.ico"
-                        />Docker Hub</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://gitee.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://gitee.com/favicon.ico"
-                        />gitee</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://bbs.pcbeta.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://bbs.pcbeta.com/favicon.png"
-                        />远景论坛</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.oschina.net/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://static.oschina.net/new-osc/img/favicon.ico"
-                        />开源中国</a
-                        >
-                    </li>
-                    <li>
-                        <a href="http://www.iplaysoft.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://cdn.iplaysoft.com/ips/icon/favicon-v1/favicon.ico"
-                        />异次元软件世界</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.iteye.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.iteye.com/images/favicon.ico"
-                        />ITeye</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://developer.aliyun.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://developer.aliyun.com/favicon.ico"
-                        />云栖社区</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.anquanke.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://s3.ssl.qhres2.com/static/02b5158bbb6adeac.ico"
-                        />安全客</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.infoq.cn/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://static001.infoq.cn/static/infoq/www/img/share-default-5tgbiuhgfefgujjhg.png"
-                        />Info Q</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.techbeat.net/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://iuv-oss.oss-cn-beijing.aliyuncs.com/icon/icon_1578802685328.png"
-                        />techbeat</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.nowcoder.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.nowcoder.com/favicon.ico"
-                        />牛客网</a>
-                    </li>
-                    <li>
-                        <a href="http://www.jianshu.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://cdn2.jianshu.io/assets/favicons/favicon-e743bfb1821442341c3ab15bdbe804f7ad97676bd07a770ccc9483473aa76f06.ico"
-                        />简书</a>
-                    </li>
-                    <li>
-                        <a href="https://www.v2ex.com/"
-                        ><img
-                                class="lazy white_bg"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.v2ex.com/static/favicon.ico"
-                        />v2ex</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.aboutyun.com/"
-                        ><img
-                                class="lazy white_bg"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.aboutyun.com/favicon.ico"
-                        />aboutyun</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://aijishu.com/"
-                        ><img
-                                class="lazy white_bg"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://cdn-assets.aijishu.com/v-290b60a4/public/favicons/favicon.ico"
-                        />极术社区</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.feng.com/"
-                        ><img
-                                class="lazy white_bg"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.feng.com/favicon.ico"
-                        />威锋网</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.cpu-monkey.com/en/"
-                        ><img
-                                class="lazy white_bg"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.cpu-monkey.com/favicon.ico"
-                        />CPU comparison</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.kkj.cn/"
-                        ><img
-                                class="lazy white_bg"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.kkj.cn/favicon.ico"
-                        />快科技资讯</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://stablediffusionweb.com/"
-                        ><img
-                                class="lazy white_bg"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://stablediffusionweb.com/favicon.ico"
-                        />Stable Diffusion</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.midjourney.com/"
-                        ><img
-                                class="lazy white_bg"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://stablediffusionweb.com/favicon.ico"
-                        />Midjourney</a
-                        >
-                    </li>
+                  <li>
+                    <a href="https://github.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://github.githubassets.com/favicons/favicon.svg"
+                        src="https://github.githubassets.com/favicons/favicon.svg"
+                      />GitHub</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://stackoverflow.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico"
+                      />StackOverFlow</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://hub.docker.com/search?q=" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://hub.docker.com/favicon.ico"
+                      />Docker Hub</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://gitee.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://gitee.com/favicon.ico"
+                      />gitee</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.v2ex.com/" target="_blank"
+                      ><img
+                        class="lazy white_bg"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://www.v2ex.com/static/favicon.ico"
+                      />v2ex</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.oschina.net/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://static.oschina.net/new-osc/img/favicon.ico"
+                      />开源中国</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.infoq.cn/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://static001.infoq.cn/static/infoq/www/img/share-default-5tgbiuhgfefgujjhg.png"
+                      />InfoQ</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.nowcoder.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://www.nowcoder.com/favicon.ico"
+                      />牛客网</a
+                    >
+                  </li>
                 </ul>
-            </div>
-            <div id="dev" class="jj-list">
-                <div class="jj-list-tit">
-                    &bullet; 开发工具 <span></span>
-                </div>
+              </div>
+              <div id="dev" class="jj-list">
+                <div class="jj-list-tit">&bullet; 开发工具 <span></span></div>
                 <ul class="jj-list-con">
-                    <li>
-                        <a href="https://tool.chinaz.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://csstools.chinaz.com/favicon.ico"
-                        />站长之家工具</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://ip.chinaz.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://csstools.chinaz.com/favicon.ico"
-                        />IP查询</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://ping.chinaz.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://csstools.chinaz.com/favicon.ico"
-                        />Ping及测速</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://tool.chinaz.com/Tools/unixtime.aspx"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://csstools.chinaz.com/favicon.ico"
-                        />Unix时间戳转换</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://tool.chinaz.com/tracert/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://csstools.chinaz.com/favicon.ico"
-                        />路由器追踪</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://tool.chinaz.com/tools/Unicode.aspx"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://csstools.chinaz.com/favicon.ico"
-                        />Unicode编码转换</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://tool.oschina.net/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://tool.oschina.net/img/favicon.ico"
-                        />OSChina工具合集</a
-                        >
-                    </li>
-                    <li>
-                        <a href="http://www.json.cn/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.json.cn/favicon.ico"
-                        />JSON格式化</a
-                        >
-                    </li>
-                    <li>
-                        <a href="http://tool.oschina.net/regex/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://tool.oschina.net/img/favicon.ico"
-                        />在线正则表达式</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://tool.oschina.net/encrypt?type=3"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://tool.oschina.net/img/favicon.ico"
-                        />在线加密解密</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://tool.oschina.net/jscompress"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://tool.oschina.net/img/favicon.ico"
-                        />在线JS/CSS/HTML压缩</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.sojson.com/sql.html"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://cdn.sojson.com/sojson/favicon.ico"
-                        />SQL在线美化</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://suijimimashengcheng.bmcx.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://api.eallion.com/favicon?sz=32&url=shop.weixin.qq.com"
-                        />随机密码生成</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://tool.lu/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://tool.lu/favicon.ico"
-                        />程序员的工具箱</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://mirrors.tuna.tsinghua.edu.cn/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://mirrors.tuna.tsinghua.edu.cn/static/img/favicon.png"
-                        />清华大学开源软件镜像站</a
-                        >
-                    </li>
-                    <li>
-                        <a href="http://plugins.jetbrains.com/search"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://resources.jetbrains.com/storage/ui/favicons/favicon.ico"
-                        />JetBrains Plugin </a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://mvnrepository.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://mvnrepository.com/assets/images/favicon.ico"
-                        />Maven Repository</a
-                        >
-                    </li>
-                    <li>
-                        <a href="http://mirrors.ustc.edu.cn/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://mirrors.ustc.edu.cn/static/img/favicon.png"
-                        />中科大开源软件镜像</a
-                        >
-                    </li>
-                    <li>
-                        <a href="http://mirrors.zju.edu.cn/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://mirrors.zju.edu.cn/index/favicon-32x32.png"
-                        />浙江大学开源镜像站</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://developer.aliyun.com/mirror/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico"
-                        />Ali开源镜像站</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://cron.qqe2.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://qqe2.com/favicon.ico"
-                        />Cron表达式生成器</a
-                        >
-                    </li>
+                  <li>
+                    <a href="https://tool.chinaz.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://csstools.chinaz.com/favicon.ico"
+                      />站长之家工具</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://tool.oschina.net/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://tool.oschina.net/img/favicon.ico"
+                      />OSChina工具合集</a
+                    >
+                  </li>
+                  <li>
+                    <a href="http://www.json.cn/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://www.json.cn/favicon.ico"
+                      />JSON格式化</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://mvnrepository.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://mvnrepository.com/assets/images/favicon.ico"
+                      />Maven Repository</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://mirrors.tuna.tsinghua.edu.cn/static/img/favicon.png"
+                      />清华大学开源软件镜像站</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://developer.aliyun.com/mirror/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico"
+                      />阿里开源镜像站</a
+                    >
+                  </li>
                 </ul>
-            </div>
-            <div id="news" class="jj-list">
-                <div class="jj-list-tit">
-                    &bullet; 资讯天下 <span></span>
-                </div>
+              </div>
+              <div id="news" class="jj-list">
+                <div class="jj-list-tit">&bullet; 资讯天下 <span></span></div>
                 <ul class="jj-list-con">
-                    <li>
-                        <a href="http://www.ifeng.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://y0.ifengimg.com/index/favicon.ico"
-                        />凤凰网</a>
-                    </li>
-                    <li>
-                        <a href="https://www.cankaoxiaoxi.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.cankaoxiaoxi.com/favicon.ico"
-                        />参考消息</a>
-                    </li>
-                    <li>
-                        <a href="http://www.ftchinese.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://d2785ji6wtdqx8.cloudfront.net/img/friend-share-icon.jpg"
-                        />FT中文网 </a>
-                    </li>
-                    <li>
-                        <a href="https://cn.nytimes.com/zh-hant/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://static01.nyt.com/favicon.ico"
-                        />纽约时报中文网</a>
-                    </li>
-                    <li>
-                        <a href="https://www.bbc.com/zhongwen/simp"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.bbc.com/favicon.ico"
-                        />BBC 中文网</a>
-                    </li>
-                    <li>
-                        <a href="https://www.dw.com/zh"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.dw.com/favicon.png"
-                        />DW在线报导</a>
-                    </li>
-                    <li>
-                        <a href="https://wallstreetcn.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://static.jianwenapp.com/wscn/_static/favicon.png"
-                        />华尔街见闻</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://awtmt.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.fortunechina.com/favicon.ico"
-                        />全天候科技</a>
-                    </li>
-                    <li>
-                        <a href="https://www.allhistory.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.allhistory.com/favicon.ico"
-                        />全历史</a
-                        >
-                    </li>
-                    <li>
-                        <a href="http://www.fortunechina.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://api.eallion.com/favicon?sz=32&url=aipix.net"
-                        />财富中文网 </a>
-                    </li>
-                    <li>
-                        <a href="https://www.forbeschina.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.forbeschina.com/favicon.ico"
-                        />福布斯中文网</a>
-                    </li>
-                    <li>
-                        <a href="https://www.zhihu.com/knowledge-plan/hot-question/hot/0/hour"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://static.zhihu.com/heifetz/favicon.ico"
-                        />知乎</a>
-                    </li>
-                    <li>
-                        <a href="https://www.singtaousa.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.singtaousa.com/images/favicon/favicon.ico"
-                        />星島日報</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.zaobao.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://oss-static-resource-zaobao.oss-cn-hongkong.aliyuncs.com/assets/common/favicon.ico"
-                        />联合早报网</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.reuters.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://oss-static-resource-zaobao.oss-cn-hongkong.aliyuncs.com/assets/common/favicon.ico"
-                        />路透社</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.scmp.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://oss-stati1c-resource-zaobao.oss-cn-hongkong.aliyuncs.com/assets/common/favicon.ico"
-                        />南华早报</a
-                        >
-                    </li>
+                  <li>
+                    <a href="https://www.zhihu.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://static.zhihu.com/heifetz/favicon.ico"
+                      />知乎</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://wallstreetcn.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://static.jianwenapp.com/wscn/_static/favicon.png"
+                      />华尔街见闻</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.bbc.com/zhongwen/simp" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://www.bbc.com/favicon.ico"
+                      />BBC中文网</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://cn.nytimes.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://static01.nyt.com/favicon.ico"
+                      />纽约时报中文网</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.reuters.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://www.reuters.com/favicon.ico"
+                      />路透社</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.zaobao.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://oss-static-resource-zaobao.oss-cn-hongkong.aliyuncs.com/assets/common/favicon.ico"
+                      />联合早报网</a
+                    >
+                  </li>
                 </ul>
-            </div>
-            <div id="others" class="jj-list">
-                <div class="jj-list-tit">
-                    &bullet; 文娱-杂碎 <span></span>
-                </div>
+              </div>
+              <div id="others" class="jj-list">
+                <div class="jj-list-tit">&bullet; 文娱-杂碎 <span></span></div>
                 <ul class="jj-list-con">
-                    <li>
-                        <a href="https://chrome.google.com/webstore?category=ext"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.google.com/images/icons/product/chrome_web_store-32.png"
-                        />Chrome 扩展</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.kujiale.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://qhstaticssl.kujiale.com/static/images/favicon.ico"
-                        />酷家乐-装修设计</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://cd.ke.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://cd.ke.com/favicon.ico"
-                        />成都贝壳找房</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.shipxy.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.shipxy.com/favicon.ico"
-                        />船讯网--船舶动态</a>
-                    </li>
-                    <li>
-                        <a href="https://zh.flightaware.com/live/map"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://zh.flightaware.com/favicon.ico"
-                        />FlightAware Live</a>
-                    </li>
-                    <li>
-                        <a href="https://nga.cn/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://zh.flightaware.com/favicon.ico"
-                        />NGA玩家社区</a
-                        >
-                    </li>
-                    <li>
-                        <a href="http://www.gamersky.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.gamersky.com/favicon.ico"
-                        />游民星空</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://keylol.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://keylol.com/favicon.ico?v=algn46e3Xp"
-                        />其乐 Keylol</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.nexusmods.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://images.nexusmods.com/favicons/ReskinOrange/favicon.ico"
-                        />Nexus mods community</a>
-                    </li>
-                    <li>
-                        <a href="https://store.steampowered.com"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://store.steampowered.com/favicon.ico"
-                        />Steam</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.gcores.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.gcores.com/favicon.ico"
-                        />机核 GCORES</a>
-                    </li>
-                    <li>
-                        <a href="https://study.163.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://study.163.com/favicon.ico"
-                        />网易云课堂</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://open.163.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://c.open.163.com/favicon.ico"
-                        />网易公开课</a>
-                    </li>
-                    <li>
-                        <a href="https://www.meishichina.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://static.meishichina.com/a1/img/fav.ico"
-                        />美食天下</a>
-                    </li>
-                    <li>
-                        <a href="https://www.gushiwen.cn/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.gushiwen.cn/favicon.ico"
-                        />古诗文网</a>
-                    </li>
-                    <li>
-                        <a href="https://film.qq.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://v.qq.com/favicon.ico"
-                        />腾讯视频</a>
-                    </li>
-                    <li>
-                        <a href="https://www.douban.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://img1.doubanio.com/favicon.ico"
-                        />豆瓣</a>
-                    </li>
-                    <li>
-                        <a href="https://www.bilibili.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.bilibili.com/favicon.ico"
-                        />Bilibili</a
-                        >
-                    </li>
-                    <li>
-                        <a href="http://www.gamelook.com.cn/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="http://www.gamelook.com.cn/wp-content/uploads/2019/05/g003.png"
-                        />游戏大观 </a>
-                    </li>
-                    <li>
-                        <a href="https://www.apple.com.cn/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.apple.com.cn/favicon.ico"
-                        />Apple中国 </a>
-                    </li>
-                    <li>
-                        <a href="https://map.baidu.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://map.baidu.com/favicon.ico"
-                        />百度地图</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.huangli.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.huangli.com/favicon.ico"
-                        />老黄历</a
-                        >
-                    </li>
+                  <li>
+                    <a href="https://www.bilibili.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://www.bilibili.com/favicon.ico"
+                      />Bilibili</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.douban.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://img1.doubanio.com/favicon.ico"
+                      />豆瓣</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://store.steampowered.com" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://store.steampowered.com/favicon.ico"
+                      />Steam</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.gcores.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://www.gcores.com/favicon.ico"
+                      />机核GCORES</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://study.163.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://study.163.com/favicon.ico"
+                      />网易云课堂</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.gushiwen.cn/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://www.gushiwen.cn/favicon.ico"
+                      />古诗文网</a
+                    >
+                  </li>
                 </ul>
-            </div>
-            <div id="works" class="jj-list">
-                <div class="jj-list-tit">
-                    &bullet; 技术专栏 <span></span>
-                </div>
+              </div>
+              <div id="sns" class="jj-list">
+                <div class="jj-list-tit">&bullet; 社交网络 <span></span></div>
                 <ul class="jj-list-con">
-                    <li>
-                        <a href="http://ifeve.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://api.eallion.com/favicon?sz=32&url=docs.google.com"
-                        />并发编程网</a
-                        >
-                    </li>
-                    <li>
-                        <a href="http://www.liaoxuefeng.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://www.liaoxuefeng.com/favicon.ico"
-                        />廖雪峰的官方网站</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://tech.meituan.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://awps-assets.meituan.net/mit/blog/v20190629/asset/icon/favicon.ico"
-                        />美团点评技术团队</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://javadoop.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://assets.javadoop.com/imgs/20510079/default/favor.ico"
-                        />JavaDoop站</a
-                        >
-                    </li>
-                    <li>
-                        <a href="http://www.jasongj.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="http://www.jasongj.com/img/sun.ico?v=5.1.0"
-                        />郭俊-技术世界</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.cnblogs.com/nullllun/category/1143476.html"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://common.cnblogs.com/favicon.svg"
-                        />田小波的技术博客</a
-                        >
-                    </li>
-                    <li>
-                        <a href="http://www.cnblogs.com/smartloli/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://common.cnblogs.com/favicon.svg"
-                        />smartloli - 博客园</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://blog.51cto.com/ahalei"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://blog.51cto.com/favicon.ico"
-                        />啊哈磊算法- 51CTO博客</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://icyfenix.cn/summary/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://icyfenix.cn/favicon.ico"
-                        />目录 | 凤凰架构</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.algomooc.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://api.eallion.com/favicon?sz=32&url=aipix.net"
-                        />AlgoMooc算法慕课网</a
-                        >
-                    </li>
-                    <li>
-                        <a href="http://shiyanjun.cn/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="http://shiyanjun.cn/favicon.ico"
-                        />简单之美-博客</a
-                        >
-                    </li>
+                  <li>
+                    <a href="https://twitter.com/" target="_blank"
+                      ><img
+                        class="lazy white_bg"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://abs.twimg.com/favicons/twitter.2.ico"
+                      />Twitter</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://static.licdn.cn/aero-v1/sc/h/al2o9zrvru7aqj8e1x2rzsrca"
+                      />LinkedIn</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://static.cdninstagram.com/rsrc.php/yv/r/BTPhT6yIYfq.ico"
+                      />Instagram</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRJ1GG_y0J.ico"
+                      />Facebook</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://mail.google.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
+                      />Gmail</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://outlook.live.com/" target="_blank"
+                      ><img
+                        class="lazy"
+                        alt="favicon"
+                        loading="lazy"
+                        data-src="https://outlook.live.com/mail/favicon.ico"
+                      />Outlook</a
+                    >
+                  </li>
                 </ul>
+              </div>
             </div>
-            <div id="sns" class="jj-list">
-                <div class="jj-list-tit">
-                    &bullet; 社交网络 <span></span>
+          </section>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+          <div class="sidebar-content">
+            <!-- Time Widget -->
+            <div class="time-widget">
+              <div class="current-time">
+                <div class="digital-clock">
+                  <span id="hours">00</span>
+                  <span class="separator">:</span>
+                  <span id="minutes">00</span>
+                  <span class="separator">:</span>
+                  <span id="seconds">00</span>
                 </div>
-                <ul class="jj-list-con">
-                    <li>
-                        <a href="https://twitter.com/explore"
-                        ><img
-                                class="lazy white_bg"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://abs.twimg.com/favicons/twitter.2.ico"
-                        />Twitter</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://static.licdn.cn/aero-v1/sc/h/al2o9zrvru7aqj8e1x2rzsrca"
-                        />LinkedIn</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://static.cdninstagram.com/rsrc.php/yv/r/BTPhT6yIYfq.ico"
-                        />instagram</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRJ1GG_y0J.ico"
-                        />Facebook</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://mail.google.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
-                        />Gmail</a
-                        >
-                    </li>
-                    <li>
-                        <a href="https://outlook.live.com/"
-                        ><img
-                                class="lazy"
-                                alt="favicon"
-                                loading="lazy"
-                                data-src="https://outlook.live.com/mail/favicon.ico"
-                        />Outlook</a
-                        >
-                    </li>
-                </ul>
+                <div class="current-date">
+                  <span id="current-date-display">2023年12月25日</span>
+                  <span id="current-day">星期一</span>
+                </div>
+              </div>
             </div>
-        </div>
-    </section>
-</main>
-<footer id="footer" class="footer">
-    <p>
-        &copy;2023 All Rights Reserved.
-    </p>
-</footer>
-<div class="to-top back-to-top">
-    <svg
-            t="1647144384541"
-            class="icon"
-            viewBox="0 0 1024 1024"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            p-id="3569"
-            width="16"
-            height="16"
-    >
+
+            <!-- Calendar Widget -->
+            <div class="calendar-widget">
+              <div class="calendar-header">
+                <button id="prev-month" class="calendar-nav">
+                  <span
+                    class="iconify"
+                    data-icon="akar-icons:chevron-left"
+                  ></span>
+                </button>
+                <h3 id="calendar-month-year">2023年12月</h3>
+                <button id="next-month" class="calendar-nav">
+                  <span
+                    class="iconify"
+                    data-icon="akar-icons:chevron-right"
+                  ></span>
+                </button>
+              </div>
+              <div class="calendar-grid">
+                <div class="calendar-weekdays">
+                  <div class="weekday">日</div>
+                  <div class="weekday">一</div>
+                  <div class="weekday">二</div>
+                  <div class="weekday">三</div>
+                  <div class="weekday">四</div>
+                  <div class="weekday">五</div>
+                  <div class="weekday">六</div>
+                </div>
+                <div class="calendar-days" id="calendar-days">
+                  <!-- Days will be generated by JavaScript -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Weather Widget -->
+            <div class="weather-widget">
+              <div class="weather-header">
+                <span
+                  class="iconify weather-icon"
+                  data-icon="wi:day-sunny"
+                ></span>
+                <div class="weather-info">
+                  <div class="temperature">25°C</div>
+                  <div class="weather-desc">晴天</div>
+                </div>
+              </div>
+              <div class="weather-details">
+                <div class="weather-item">
+                  <span class="iconify" data-icon="wi:humidity"></span>
+                  <span>湿度: 65%</span>
+                </div>
+                <div class="weather-item">
+                  <span class="iconify" data-icon="wi:strong-wind"></span>
+                  <span>风速: 12km/h</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Notes Widget -->
+            <div class="notes-widget">
+              <div class="notes-header">
+                <h4>快速笔记</h4>
+                <button id="add-note" class="add-note-btn">
+                  <span class="iconify" data-icon="akar-icons:plus"></span>
+                </button>
+              </div>
+              <div class="notes-list" id="notes-list">
+                <!-- Notes will be generated by JavaScript -->
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+    <footer id="footer" class="footer">
+      <p>&copy;2023 All Rights Reserved.</p>
+    </footer>
+    <div class="to-top back-to-top">
+      <svg
+        t="1647144384541"
+        class="icon"
+        viewBox="0 0 1024 1024"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        p-id="3569"
+        width="16"
+        height="16"
+      >
         <path
-                d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3c-3.8 5.3-0.1 12.7 6.5 12.7h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
-                p-id="3570"
+          d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3c-3.8 5.3-0.1 12.7 6.5 12.7h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+          p-id="3570"
         ></path>
-    </svg>
-</div>
-<a
-        href="https://github.com/abuzhi/personal-page"
-        class="github-corner"
-        aria-label="View source on GitHub"
->
-    <svg
-            width="68"
-            height="68"
-            viewBox="0 0 250 250"
-            style="
+      </svg>
+    </div>
+    <a
+      href="https://github.com/abuzhi/personal-page"
+      class="github-corner"
+      aria-label="View source on GitHub"
+    >
+      <svg
+        width="68"
+        height="68"
+        viewBox="0 0 250 250"
+        style="
           fill: #151513;
           color: #f2f2f2;
           position: absolute;
@@ -1877,40 +1348,44 @@
           border: 0;
           right: 0;
         "
-            aria-hidden="true"
-    >
+        aria-hidden="true"
+      >
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
         <path
-                d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-                fill="currentColor"
-                style="transform-origin: 130px 106px"
-                class="octo-arm"
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
         ></path>
         <path
-                d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-                fill="currentColor"
-                class="octo-body"
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
         ></path>
-    </svg
-    >
-</a>
-<script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.staticfile.org/moment.js/2.29.2/moment.min.js"></script>
-<script src="https://cdn.staticfile.org/vanilla-lazyload/17.3.1/lazyload.min.js"></script>
-<script src="https://cdn.staticfile.org/iconify/2.2.1/iconify.min.js"></script>
-<script
-        type="text/javascript"
-        src="static/js/custom.min.js"
-        id="custom-js"
-></script>
-<script
-        type="text/javascript"
-        src="static/js/toastr.min.js"
-        id="toastr-js"
-></script>
-<meta name="apple-mobile-web-app-capable" content="yes"/>
-<script>
-    // Check that service workers are registered if ('serviceWorker' in navigator){ window.addEventListener('load', ()=>{ navigator.serviceWorker.register('/service-worker.js');});}
-</script>
-</body>
+      </svg>
+    </a>
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/moment.js/2.29.2/moment.min.js"></script>
+    <script src="https://cdn.staticfile.org/vanilla-lazyload/17.3.1/lazyload.min.js"></script>
+    <script src="https://cdn.staticfile.org/iconify/2.2.1/iconify.min.js"></script>
+    <script
+      type="text/javascript"
+      src="static/js/custom.min.js"
+      id="custom-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="static/js/enhanced.js"
+      id="enhanced-js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="static/js/toastr.min.js"
+      id="toastr-js"
+    ></script>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script>
+      // Check that service workers are registered if ('serviceWorker' in navigator){ window.addEventListener('load', ()=>{ navigator.serviceWorker.register('/service-worker.js');});}
+    </script>
+  </body>
 </html>
