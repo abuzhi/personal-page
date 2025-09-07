@@ -1,1391 +1,628 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>个人导航</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="个人导航,简单网址导航" />
-    <meta name="description" content="机会总是垂青于有准备的人" />
-    <link rel="manifest" href="manifest.json" />
-    <link rel="apple-touch-icon" href="static/img/apple-touch-icon.png" />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#667eea" />
-    <link rel="dns-prefetch" href="//cdn.statically.io" />
-    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-    <link rel="dns-prefetch" href="//cdn.staticfile.org" />
-    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-    <link rel="preconnect" href="https://fonts.geekzu.org" />
-    <link rel="shortcut icon" href="static/img/favicon.ico" />
-    <link
-      href="https://cdn.staticfile.org/normalize/8.0.1/normalize.min.css"
-      rel="stylesheet"
-    />
-    <link href="static/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="static/css/enhanced.css" rel="stylesheet" type="text/css" />
-    <link href="static/css/toastr.min.css" rel="stylesheet" type="text/css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/weather-icons@1.3.2/css/weather-icons.min.css"
-    />
-  </head>
-  <body class="wrapper">
-    <div class="page-container">
-      <header id="header">
-        <div class="header">
-          <div class="title">
-            <h1>个人导航</h1>
-            <p class="subtitle">发现更美好的网络世界</p>
-          </div>
-          <div class="greeting" style="color: #fff">
-            <span id="greetings" class="greetings">Hello ... </span>
-            <span id="date" class="date">北京时间</span>
-            <span id="clock" class="clock"></span>
-          </div>
-          <div class="about">
-            <span
-              class="iconify"
-              data-icon="file-icons:hugo"
-              style="color: #fff"
-            ></span>
-            <a
-              href="https://abuzhi.github.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style="color: #fff"
-              >博客</a
-            >
-          </div>
-        </div>
-      </header>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盈视科技 一站式私域解决方案服务提供商</title>
+    <link rel="shortcut icon" href="static/img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #4F7CF7;
+            --secondary-blue: #2E5BFF;
+            --light-blue: #F0F4FF;
+            --text-dark: #1A1D29;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --gray-100: #F9FAFB;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --border-radius: 12px;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
 
-      <div class="main-content">
-        <main id="content" class="content">
-          <section id="home_search">
-            <div class="item-box border search-container">
-              <div id="search">
-                <div id="search-list" class="hide-type-list">
-                  <div class="s-type">
-                    <span class="type-text"></span>
-                    <div class="s-type-list transition">
-                      <label for="type-google"
-                        ><span class="emoji">🔍</span>常用</label
-                      ><label for="type-spotify"
-                        ><span class="emoji">🎵</span>音乐</label
-                      ><label for="type-youtube"
-                        ><span class="emoji">🎬</span>视频</label
-                      ><label for="type-coupon"
-                        ><span class="emoji">🛒</span>购物</label
-                      ><label for="type-google-images"
-                        ><span class="emoji">🎴</span>图片</label
-                      ><label for="type-csswinner"
-                        ><span class="emoji">📱</span>设计</label
-                      >
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .main-content {
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 60px;
+            align-items: center;
+        }
+
+        /* Left Section - Content */
+        .content-section {
+            color: var(--white);
+            padding: 40px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+         .logo-svg {
+             width: 50px;
+             height: 50px;
+             margin-right: 12px;
+             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+         }
+
+         .logo-icon {
+             width: 40px;
+             height: 40px;
+             background: var(--white);
+             border-radius: 8px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             margin-right: 12px;
+             font-weight: 700;
+             color: var(--primary-blue);
+             font-size: 18px;
+         }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .main-heading {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sub-heading {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .feature-highlight {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius);
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 60px;
+        }
+
+        /* 3D Device Illustration */
+        .device-illustration {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        .device-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .camera-device {
+            position: absolute;
+            width: 180px;
+            height: 120px;
+            background: linear-gradient(135deg, #4F7CF7 0%, #2E5BFF 100%);
+            border-radius: 16px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateX(-15deg) rotateY(15deg);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .camera-lens {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle at 30% 30%, #ffffff, #4F7CF7);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 4px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .camera-lens::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle at 30% 30%, #1e40af, #1e3a8a);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .platform-base {
+            position: absolute;
+            width: 250px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 20px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 12px;
+            color: var(--white);
+            animation: floatAround 8s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 30%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .floating-element:nth-child(4) {
+            bottom: 30%;
+            right: 20%;
+            animation-delay: 6s;
+        }
+
+        /* Right Section - Login Form */
+        .login-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 48px 40px;
+            box-shadow: var(--shadow-xl);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .welcome-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .welcome-subtext {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--text-dark);
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(79, 124, 247, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: var(--text-light);
+        }
+
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary-blue);
+        }
+
+        .checkbox-label {
+            font-size: 14px;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        .forgot-password {
+            font-size: 14px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 24px;
+        }
+
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .login-button:active {
+            transform: translateY(0);
+        }
+
+        .signup-link {
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .signup-link a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translate(-50%, -50%) rotateX(-15deg) rotateY(15deg) translateY(0px);
+            }
+            50% {
+                transform: translate(-50%, -50%) rotateX(-15deg) rotateY(15deg) translateY(-20px);
+            }
+        }
+
+        @keyframes floatAround {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-10px) rotate(2deg);
+            }
+            50% {
+                transform: translateY(-5px) rotate(-1deg);
+            }
+            75% {
+                transform: translateY(-15px) rotate(1deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                max-width: 500px;
+            }
+
+            .content-section {
+                text-align: center;
+                order: 2;
+            }
+
+            .login-section {
+                order: 1;
+            }
+
+            .main-heading {
+                font-size: 36px;
+            }
+
+            .sub-heading {
+                font-size: 24px;
+            }
+
+            .device-illustration {
+                height: 250px;
+            }
+
+            .device-container {
+                width: 250px;
+                height: 250px;
+            }
+
+            .camera-device {
+                width: 150px;
+                height: 100px;
+            }
+
+             .camera-lens {
+                 width: 50px;
+                 height: 50px;
+             }
+
+             .logo-svg {
+                 width: 40px;
+                 height: 40px;
+             }
+         }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 10px;
+            }
+
+            .login-section {
+                padding: 32px 24px;
+            }
+
+            .main-heading {
+                font-size: 28px;
+            }
+
+            .sub-heading {
+                font-size: 20px;
+            }
+
+            .welcome-text {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <!-- Left Content Section -->
+            <div class="content-section">
+                <div class="logo">
+                    <img src="static/img/yes-logo.png" alt="YES LIVE" class="logo-svg">
+                    <div class="logo-text">盈视科技</div>
+                </div>
+
+                <h1 class="main-heading">专注微信生态的</h1>
+                <h2 class="sub-heading">一站式私域解决方案服务提供商</h2>
+
+                <div class="feature-highlight">
+                    ✨ 一站式私域解决方案
+                </div>
+
+                <!-- 3D Device Illustration -->
+                <div class="device-illustration">
+                    <div class="device-container">
+                        <div class="camera-device">
+                            <div class="camera-lens"></div>
+                        </div>
+                        <div class="platform-base"></div>
                     </div>
-                  </div>
-                  <div class="search-group s-current">
-                    <span class="type-text metaColor">搜索</span>
-                    <ul class="search-type">
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-google"
-                          value="https://www.google.com/search?q="
-                          data-placeholder="输入关键词后按回车即可搜索"
-                          hidden=""
-                        /><label
-                          id="focused"
-                          for="type-google"
-                          class="metaColor transition"
-                          >Google</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-baidu"
-                          value="https://www.baidu.com/s?wd="
-                          data-placeholder="百度一下，你就知道！"
-                          hidden=""
-                        /><label for="type-baidu" class="metaColor transition"
-                          >百度</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-github"
-                          value="https://github.com/search?q="
-                          data-placeholder="Where the world builds software"
-                          hidden=""
-                        /><label for="type-github" class="metaColor transition"
-                          >GitHub</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-bing"
-                          value="https://www.bing.com/search?q"
-                          data-placeholder="Microsoft Bing Search"
-                          hidden=""
-                        /><label for="type-bing" class="metaColor transition"
-                          >Bing</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-whois"
-                          value="https://www.whois.com/whois/"
-                          data-placeholder="Free Whois Domain and IP Lookup"
-                          hidden=""
-                        /><label for="type-whois" class="metaColor transition"
-                          >Whois</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-unsplash-hot"
-                          value="https://unsplash.com/search/"
-                          data-placeholder="优美免费无版权高清图片搜索"
-                          hidden=""
-                        /><label
-                          for="type-unsplash-hot"
-                          class="metaColor transition"
-                          >Unsplash</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-ping"
-                          value="https://ping.chinaz.com/"
-                          data-placeholder="多个地点 PING 服务器，网站测速"
-                          hidden=""
-                        /><label for="type-ping" class="metaColor transition"
-                          >PING</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-douban"
-                          value="https://www.douban.com/search?q="
-                          data-placeholder="汇集一亿人生活趣味"
-                          hidden=""
-                        /><label for="type-douban" class="metaColor transition"
-                          >豆瓣</label
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="search-group">
-                    <span class="type-text metaColor">图片</span>
-                    <ul class="search-type">
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-google-images"
-                          value="https://www.google.com/search?newwindow=1&amp;safe=strict&amp;biw=1542&amp;bih=956&amp;tbm=isch&amp;sa=1&amp;q="
-                          data-placeholder="Google图片搜索"
-                          hidden=""
-                        /><label
-                          for="type-google-images"
-                          class="metaColor transition"
-                          >Google</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-unsplash"
-                          value="https://unsplash.com/search/"
-                          data-placeholder="优美免费无版权高清图片搜索"
-                          hidden=""
-                        /><label
-                          for="type-unsplash"
-                          class="metaColor transition"
-                          >Unsplash</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-pexels"
-                          value="https://www.pexels.com/search/"
-                          data-placeholder="Pexels免费图库搜索"
-                          hidden=""
-                        /><label for="type-pexels" class="metaColor transition"
-                          >Pexels</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-bing-images"
-                          value="https://www.bing.com/images/search?q="
-                          data-placeholder="Bing图片搜索"
-                          hidden=""
-                        /><label
-                          for="type-bing-images"
-                          class="metaColor transition"
-                          >Bing</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-500px"
-                          value="https://500px.com/search?q="
-                          data-placeholder="500PX 高品质摄影图片搜索"
-                          hidden=""
-                        /><label for="type-500px" class="metaColor transition"
-                          >500PX</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-baidu-images"
-                          value="https://image.baidu.com/search/index?tn=baiduimage&amp;ps=1&amp;ct=201326592&amp;lm=-1&amp;cl=2&amp;nc=1&amp;ie=utf-8&amp;word="
-                          data-placeholder="百度图片搜索"
-                          hidden=""
-                        /><label
-                          for="type-baidu-images"
-                          class="metaColor transition"
-                          >百度</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-hellorf"
-                          value="https://www.hellorf.com/photo/search/all/"
-                          data-placeholder="海洛正版图库"
-                          hidden=""
-                        /><label for="type-hellorf" class="metaColor transition"
-                          >海洛</label
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="search-group">
-                    <span class="type-text metaColor">设计</span>
-                    <ul class="search-type">
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-csswinner"
-                          value="https://www.csswinner.com/search/"
-                          data-placeholder="最佳的CSS网页设计灵感画廊"
-                          hidden=""
-                        /><label
-                          for="type-csswinner"
-                          class="metaColor transition"
-                          >CSS Winner</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-zcool"
-                          value="https://www.zcool.com.cn/tosearch.do?page=0&amp;f=hb&amp;world="
-                          data-placeholder="站酷素材搜索"
-                          hidden=""
-                        /><label for="type-zcool" class="metaColor transition"
-                          >站酷</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-uicn"
-                          value="https://s.ui.cn/index.html?keywords="
-                          data-placeholder="UI 中国素材搜索"
-                          hidden=""
-                        /><label for="type-uicn" class="metaColor transition"
-                          >UI 中国</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-shejidaren"
-                          value="https://so.shejidaren.com/cse/search?s=1461928278188833482&amp;q="
-                          data-placeholder="设计达人素材搜索"
-                          hidden=""
-                        /><label
-                          for="type-shejidaren"
-                          class="metaColor transition"
-                          >设计达人</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-68design"
-                          value="https://www.68design.net/work/?k="
-                          data-placeholder="68Design素材搜索"
-                          hidden=""
-                        /><label
-                          for="type-68design"
-                          class="metaColor transition"
-                          >68Design</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-uisdc"
-                          value="https://so.uisdc.com/cse/search?s=16162430669563244173&amp;q="
-                          data-placeholder="优设素材搜索"
-                          hidden=""
-                        /><label for="type-uisdc" class="metaColor transition"
-                          >优设</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-abduzeedo"
-                          value="https://abduzeedo.com/search/node?keys="
-                          data-placeholder="一个关于创意灵感的站点"
-                          hidden=""
-                        /><label
-                          for="type-abduzeedo"
-                          class="metaColor transition"
-                          >Abduzeedo</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-niice"
-                          value="https://niice.co/search/"
-                          data-placeholder="设计师视觉搜索引擎"
-                          hidden=""
-                        /><label for="type-niice" class="metaColor transition"
-                          >Niice</label
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="search-group">
-                    <span class="type-text metaColor">音乐</span>
-                    <ul class="search-type">
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-spotify"
-                          value="https://open.spotify.com/search/"
-                          data-placeholder="Search from Spotify"
-                          hidden=""
-                        /><label for="type-spotify" class="metaColor transition"
-                          >Spotify</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-163"
-                          value="https://music.163.com/#/search/m/?s="
-                          data-placeholder="网易云音乐搜索"
-                          hidden=""
-                        /><label for="type-163" class="metaColor transition"
-                          >网易云音乐</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-lastfm"
-                          value="https://www.last.fm/search?q="
-                          data-placeholder="Search from Last.fm"
-                          hidden=""
-                        /><label for="type-lastfm" class="metaColor transition"
-                          >Last fm</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-qq-music"
-                          value="https://y.qq.com/portal/search.html#searchid=1&amp;remoteplace=txt.yqq.top&amp;t=song&amp;w="
-                          data-placeholder="QQ音乐"
-                          hidden=""
-                        /><label
-                          for="type-qq-music"
-                          class="metaColor transition"
-                          >QQ 音乐</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-xiami"
-                          value="https://www.xiami.com/search?key="
-                          data-placeholder="虾米音乐"
-                          hidden=""
-                        /><label for="type-xiami" class="metaColor transition"
-                          >虾米</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-baidu-music"
-                          value="https://music.baidu.com/search?key="
-                          data-placeholder="百度音乐"
-                          hidden=""
-                        /><label
-                          for="type-baidu-music"
-                          class="metaColor transition"
-                          >百度音乐</label
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="search-group">
-                    <span class="type-text metaColor">视频</span>
-                    <ul class="search-type">
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-youtube"
-                          value="https://www.youtube.com/results?search_query="
-                          data-placeholder="Youtube 视频搜索"
-                          hidden=""
-                        /><label for="type-youtube" class="metaColor transition"
-                          >Youtube</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-bilibili"
-                          value="https://search.bilibili.com/all?keyword="
-                          data-placeholder="哔哩哔哩 视频搜索"
-                          hidden=""
-                        /><label
-                          for="type-bilibili"
-                          class="metaColor transition"
-                          >哔哩哔哩</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-pianyuan"
-                          value="https://pianyuan.org/search?q="
-                          data-placeholder="搜索片源网电影"
-                          hidden=""
-                        /><label
-                          for="type-pianyuan"
-                          class="metaColor transition"
-                          >片源网</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-piaohua"
-                          value="https://www.piaohua.com/plus/search.php?kwtype=0&amp;keyword="
-                          data-placeholder="飘花电影高清电影下载"
-                          hidden=""
-                        /><label for="type-piaohua" class="metaColor transition"
-                          >飘花电影</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-gaoqing"
-                          value="https://gaoqing.la/?s="
-                          data-placeholder="中国高清网"
-                          hidden=""
-                        /><label for="type-gaoqing" class="metaColor transition"
-                          >中国高清网</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-youku"
-                          value="https://www.soku.com/search_video/q_"
-                          data-placeholder="优酷视频搜索"
-                          hidden=""
-                        /><label for="type-youku" class="metaColor transition"
-                          >优酷</label
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="search-group">
-                    <span class="type-text metaColor">购物</span>
-                    <ul class="search-type">
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-coupon"
-                          value="https://www.kubaicai.com/?r=/l&kw="
-                          data-placeholder="搜索精选优惠券 淘宝 京东 拼多多"
-                          hidden=""
-                        /><label for="type-coupon" class="metaColor transition"
-                          >优惠券</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-jd"
-                          value="https://search.jd.com/Search?keyword="
-                          data-placeholder="京东商品搜索"
-                          hidden=""
-                        /><label for="type-jd" class="metaColor transition"
-                          >京东</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-taobao"
-                          value="https://s.taobao.com/search?q="
-                          data-placeholder="淘宝商品搜索"
-                          hidden=""
-                        /><label for="type-taobao" class="metaColor transition"
-                          >淘宝</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-tmall"
-                          value="https://list.tmall.com/search_product.htm?q="
-                          data-placeholder="天猫商品搜索"
-                          hidden=""
-                        /><label for="type-tmall" class="metaColor transition"
-                          >天猫</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-amazon"
-                          value="https://www.amazon.cn/s/ref=nb_sb_noss_1?__mk_zh_CN=亚马逊网站&amp;url=search-alias%3Daps&amp;field-keywords="
-                          data-placeholder="亚马逊商品搜索"
-                          hidden=""
-                        /><label for="type-amazon" class="metaColor transition"
-                          >亚马逊</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-dangdang"
-                          value="https://search.dangdang.com/?key="
-                          data-placeholder="当当商品搜索"
-                          hidden=""
-                        /><label
-                          for="type-dangdang"
-                          class="metaColor transition"
-                          >当当</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-meituan"
-                          value="https://cd.meituan.com/s/?w="
-                          data-placeholder="美团商品搜索"
-                          hidden=""
-                        /><label for="type-meituan" class="metaColor transition"
-                          >美团</label
-                        >
-                      </li>
-                      <li>
-                        <input
-                          checked=""
-                          type="radio"
-                          name="type"
-                          id="type-ebay"
-                          value="https://www.ebay.com/sch/"
-                          data-placeholder="eBay商品搜索"
-                          hidden=""
-                        /><label for="type-ebay" class="metaColor transition"
-                          >eBay</label
-                        >
-                      </li>
-                    </ul>
-                  </div>
+
+                    <div class="floating-elements">
+                        <div class="floating-element">📱 微信私域</div>
+                        <div class="floating-element">💬 实时互动</div>
+                        <div class="floating-element">📊 数据分析</div>
+                    </div>
                 </div>
-                <form
-                  action="https://www.google.com/search?q="
-                  method="get"
-                  target="_blank"
-                  id="super-search-fm"
-                >
-                  <input
-                    type="text"
-                    id="search-text"
-                    autocomplete="off"
-                    placeholder="输入关键词后按回车即可搜索"
-                    value=""
-                  />
-                  <button type="submit" id="search_submit" aria-label="Search">
-                    <span class="iconify" data-icon="akar-icons:search"></span>
-                  </button>
+            </div>
+
+            <!-- Right Login Section -->
+            <div class="login-section">
+                <div class="login-header">
+                    <h3 class="welcome-text">欢迎使用YES LIVE</h3>
+                    <p class="welcome-subtext">请登录您的账户以继续</p>
+                </div>
+
+                <form class="login-form">
+                    <div class="form-group">
+                        <label class="form-label" for="phone">手机号码</label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            class="form-input" 
+                            placeholder="请输入手机号"
+                            required
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="password">密码</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            class="form-input" 
+                            placeholder="请输入密码"
+                            required
+                        />
+                    </div>
+
+                    <div class="login-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember" class="checkbox">
+                            <label for="remember" class="checkbox-label">记住登录</label>
+                        </div>
+                        <a href="#" class="forgot-password">忘记密码？</a>
+                    </div>
+
+                    <button type="submit" class="login-button">登录</button>
+
+                    <div class="signup-link">
+                        还没有账户？<a href="#">免费注册</a>
+                    </div>
                 </form>
-                <div
-                  class="set-check transition switchBG tip"
-                  title="新窗口将打开搜索结果"
-                >
-                  <input
-                    type="checkbox"
-                    id="set-search-blank"
-                    checked="checked"
-                    required="required"
-                    hidden="hidden"
-                  /><label for="set-search-blank"></label>
-                </div>
-              </div>
             </div>
-          </section>
-
-          <section id="home" class="inner-center main">
-            <div class="content-inside">
-              <div class="jj-list hot">
-                <div class="jj-list-tit">&bullet; 常用网站 <span></span></div>
-                <ul class="jj-list-con">
-                  <li>
-                    <a href="https://email.163.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://email.163.com/favicon.ico"
-                      />网易邮箱</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://github.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://github.githubassets.com/favicons/favicon.svg"
-                        src="https://github.githubassets.com/favicons/favicon.svg"
-                      />GitHub</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.v2ex.com/" target="_blank"
-                      ><img
-                        class="lazy white_bg"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://www.v2ex.com/static/favicon.ico"
-                      />v2ex</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.youtube.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://www.youtube.com/s/desktop/932eb6a8/img/favicon.ico"
-                      />Youtube</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.bilibili.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://www.bilibili.com/favicon.ico"
-                      />Bilibili</a
-                    >
-                  </li>
-                  <li>
-                    <a href="http://www.nmc.cn/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="http://image.nmc.cn/assets/favicon.ico"
-                      />气象台</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://store.steampowered.com" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://store.steampowered.com/favicon.ico"
-                      />Steam</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.xinhuanet.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://pc-index-static.cdn.bcebos.com/pc-index-nav/00001/导航List_新华网.png"
-                      />新华网</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.jd.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://www.jd.com/favicon.ico"
-                      />京东</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://map.baidu.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://map.baidu.com/favicon.ico"
-                      />百度地图</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.huangli.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://www.huangli.com/favicon.ico"
-                      />老黄历</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://earth.google.com/web/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://www.huangli1.com/favicon.ico"
-                      />Google Earth</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div id="it" class="jj-list">
-                <div class="jj-list-tit">&bullet; IT网站 <span></span></div>
-                <ul class="jj-list-con">
-                  <li>
-                    <a href="https://github.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://github.githubassets.com/favicons/favicon.svg"
-                        src="https://github.githubassets.com/favicons/favicon.svg"
-                      />GitHub</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://stackoverflow.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico"
-                      />StackOverFlow</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://hub.docker.com/search?q=" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://hub.docker.com/favicon.ico"
-                      />Docker Hub</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://gitee.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://gitee.com/favicon.ico"
-                      />gitee</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.v2ex.com/" target="_blank"
-                      ><img
-                        class="lazy white_bg"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://www.v2ex.com/static/favicon.ico"
-                      />v2ex</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.oschina.net/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://static.oschina.net/new-osc/img/favicon.ico"
-                      />开源中国</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.infoq.cn/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://static001.infoq.cn/static/infoq/www/img/share-default-5tgbiuhgfefgujjhg.png"
-                      />InfoQ</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.nowcoder.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://www.nowcoder.com/favicon.ico"
-                      />牛客网</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div id="dev" class="jj-list">
-                <div class="jj-list-tit">&bullet; 开发工具 <span></span></div>
-                <ul class="jj-list-con">
-                  <li>
-                    <a href="https://tool.chinaz.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://csstools.chinaz.com/favicon.ico"
-                      />站长之家工具</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://tool.oschina.net/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://tool.oschina.net/img/favicon.ico"
-                      />OSChina工具合集</a
-                    >
-                  </li>
-                  <li>
-                    <a href="http://www.json.cn/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://www.json.cn/favicon.ico"
-                      />JSON格式化</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://mvnrepository.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://mvnrepository.com/assets/images/favicon.ico"
-                      />Maven Repository</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://mirrors.tuna.tsinghua.edu.cn/static/img/favicon.png"
-                      />清华大学开源软件镜像站</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://developer.aliyun.com/mirror/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico"
-                      />阿里开源镜像站</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div id="news" class="jj-list">
-                <div class="jj-list-tit">&bullet; 资讯天下 <span></span></div>
-                <ul class="jj-list-con">
-                  <li>
-                    <a href="https://www.zhihu.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://static.zhihu.com/heifetz/favicon.ico"
-                      />知乎</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://wallstreetcn.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://static.jianwenapp.com/wscn/_static/favicon.png"
-                      />华尔街见闻</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.bbc.com/zhongwen/simp" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://www.bbc.com/favicon.ico"
-                      />BBC中文网</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://cn.nytimes.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://static01.nyt.com/favicon.ico"
-                      />纽约时报中文网</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.reuters.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://www.reuters.com/favicon.ico"
-                      />路透社</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.zaobao.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://oss-static-resource-zaobao.oss-cn-hongkong.aliyuncs.com/assets/common/favicon.ico"
-                      />联合早报网</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div id="others" class="jj-list">
-                <div class="jj-list-tit">&bullet; 文娱-杂碎 <span></span></div>
-                <ul class="jj-list-con">
-                  <li>
-                    <a href="https://www.bilibili.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://www.bilibili.com/favicon.ico"
-                      />Bilibili</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.douban.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://img1.doubanio.com/favicon.ico"
-                      />豆瓣</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://store.steampowered.com" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://store.steampowered.com/favicon.ico"
-                      />Steam</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.gcores.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://www.gcores.com/favicon.ico"
-                      />机核GCORES</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://study.163.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://study.163.com/favicon.ico"
-                      />网易云课堂</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.gushiwen.cn/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://www.gushiwen.cn/favicon.ico"
-                      />古诗文网</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div id="sns" class="jj-list">
-                <div class="jj-list-tit">&bullet; 社交网络 <span></span></div>
-                <ul class="jj-list-con">
-                  <li>
-                    <a href="https://twitter.com/" target="_blank"
-                      ><img
-                        class="lazy white_bg"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://abs.twimg.com/favicons/twitter.2.ico"
-                      />Twitter</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.linkedin.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://static.licdn.cn/aero-v1/sc/h/al2o9zrvru7aqj8e1x2rzsrca"
-                      />LinkedIn</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.instagram.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://static.cdninstagram.com/rsrc.php/yv/r/BTPhT6yIYfq.ico"
-                      />Instagram</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://www.facebook.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRJ1GG_y0J.ico"
-                      />Facebook</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://mail.google.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
-                      />Gmail</a
-                    >
-                  </li>
-                  <li>
-                    <a href="https://outlook.live.com/" target="_blank"
-                      ><img
-                        class="lazy"
-                        alt="favicon"
-                        loading="lazy"
-                        data-src="https://outlook.live.com/mail/favicon.ico"
-                      />Outlook</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-        </main>
-
-        <!-- Right Sidebar -->
-        <aside class="right-sidebar">
-          <div class="sidebar-content">
-            <!-- Time Widget -->
-            <div class="time-widget">
-              <div class="current-time">
-                <div class="digital-clock">
-                  <span id="hours">00</span>
-                  <span class="separator">:</span>
-                  <span id="minutes">00</span>
-                  <span class="separator">:</span>
-                  <span id="seconds">00</span>
-                </div>
-                <div class="current-date">
-                  <span id="current-date-display">2023年12月25日</span>
-                  <span id="current-day">星期一</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Calendar Widget -->
-            <div class="calendar-widget">
-              <div class="calendar-header">
-                <button id="prev-month" class="calendar-nav">
-                  <span
-                    class="iconify"
-                    data-icon="akar-icons:chevron-left"
-                  ></span>
-                </button>
-                <h3 id="calendar-month-year">2023年12月</h3>
-                <button id="next-month" class="calendar-nav">
-                  <span
-                    class="iconify"
-                    data-icon="akar-icons:chevron-right"
-                  ></span>
-                </button>
-              </div>
-              <div class="calendar-grid">
-                <div class="calendar-weekdays">
-                  <div class="weekday">日</div>
-                  <div class="weekday">一</div>
-                  <div class="weekday">二</div>
-                  <div class="weekday">三</div>
-                  <div class="weekday">四</div>
-                  <div class="weekday">五</div>
-                  <div class="weekday">六</div>
-                </div>
-                <div class="calendar-days" id="calendar-days">
-                  <!-- Days will be generated by JavaScript -->
-                </div>
-              </div>
-            </div>
-
-            <!-- Weather Widget -->
-            <div class="weather-widget">
-              <div class="weather-header">
-                <span
-                  class="iconify weather-icon"
-                  data-icon="wi:day-sunny"
-                ></span>
-                <div class="weather-info">
-                  <div class="temperature">25°C</div>
-                  <div class="weather-desc">晴天</div>
-                </div>
-              </div>
-              <div class="weather-details">
-                <div class="weather-item">
-                  <span class="iconify" data-icon="wi:humidity"></span>
-                  <span>湿度: 65%</span>
-                </div>
-                <div class="weather-item">
-                  <span class="iconify" data-icon="wi:strong-wind"></span>
-                  <span>风速: 12km/h</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Quick Notes Widget -->
-            <div class="notes-widget">
-              <div class="notes-header">
-                <h4>快速笔记</h4>
-                <button id="add-note" class="add-note-btn">
-                  <span class="iconify" data-icon="akar-icons:plus"></span>
-                </button>
-              </div>
-              <div class="notes-list" id="notes-list">
-                <!-- Notes will be generated by JavaScript -->
-              </div>
-            </div>
-          </div>
-        </aside>
-      </div>
+        </div>
     </div>
-    <footer id="footer" class="footer">
-      <p>&copy;2023 All Rights Reserved.</p>
-    </footer>
-    <div class="to-top back-to-top">
-      <svg
-        t="1647144384541"
-        class="icon"
-        viewBox="0 0 1024 1024"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        p-id="3569"
-        width="16"
-        height="16"
-      >
-        <path
-          d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3c-3.8 5.3-0.1 12.7 6.5 12.7h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
-          p-id="3570"
-        ></path>
-      </svg>
+
+    <div class="footer">
+        Copyright © 2024 深圳盈视数科科技有限公司 | <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2024289970号</a> | <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2024289970号-1</a> | <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2024289970号-2</a>
     </div>
-    <a
-      href="https://github.com/abuzhi/personal-page"
-      class="github-corner"
-      aria-label="View source on GitHub"
-    >
-      <svg
-        width="68"
-        height="68"
-        viewBox="0 0 250 250"
-        style="
-          fill: #151513;
-          color: #f2f2f2;
-          position: absolute;
-          top: 0;
-          border: 0;
-          right: 0;
-        "
-        aria-hidden="true"
-      >
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-        <path
-          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-          fill="currentColor"
-          style="transform-origin: 130px 106px"
-          class="octo-arm"
-        ></path>
-        <path
-          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-          fill="currentColor"
-          class="octo-body"
-        ></path>
-      </svg>
-    </a>
-    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/moment.js/2.29.2/moment.min.js"></script>
-    <script src="https://cdn.staticfile.org/vanilla-lazyload/17.3.1/lazyload.min.js"></script>
-    <script src="https://cdn.staticfile.org/iconify/2.2.1/iconify.min.js"></script>
-    <script
-      type="text/javascript"
-      src="static/js/custom.min.js"
-      id="custom-js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="static/js/enhanced.js"
-      id="enhanced-js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="static/js/toastr.min.js"
-      id="toastr-js"
-    ></script>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+
     <script>
-      // Check that service workers are registered if ('serviceWorker' in navigator){ window.addEventListener('load', ()=>{ navigator.serviceWorker.register('/service-worker.js');});}
+        // 简单的表单验证
+        document.querySelector('.login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+            
+            if (!phone) {
+                alert('请输入手机号码');
+                return;
+            }
+            
+            if (!password) {
+                alert('请输入密码');
+                return;
+            }
+            
+            // 手机号简单验证
+            const phoneRegex = /^1[3456789]\d{9}$/;
+            if (!phoneRegex.test(phone)) {
+                alert('请输入正确的手机号码');
+                return;
+            }
+            
+            // 这里可以添加实际的登录逻辑
+            alert('登录功能演示 - 实际项目中这里会连接到后端API');
+        });
+
+        // 添加一些交互效果
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'translateY(-2px)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'translateY(0)';
+            });
+        });
+
+        // 添加页面加载动画
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transform = 'translateY(20px)';
+            document.body.style.transition = 'all 0.6s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+                document.body.style.transform = 'translateY(0)';
+            }, 100);
+        });
     </script>
-  </body>
+</body>
 </html>
