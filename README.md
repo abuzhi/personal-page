@@ -7,6 +7,12 @@
 
 本项目为满足个人需求，改为了个人导航页
 
+## 服务器部署
+
+线上地址为 `https://nn.sayai.top`，Nginx 和静态文件部署在 `177.3.88.105`。
+配置文件为 [nginx.conf](nginx.conf)，首次申请证书使用 [nginx.http.conf](nginx.http.conf)。
+完整步骤见 [DEPLOY.md](DEPLOY.md)。
+
 ### LICENSE
 
 ```
